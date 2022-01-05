@@ -31,9 +31,9 @@ function crossOffMovie(event){
     console.log(event);
     event.target.classList.toggle("checked");
     if(event.target.classList.contains("checked")){
-        message.textContent = "Movie Watched!"
+        message.textContent = `${event.target.textContent} Watched!`;
     }else{
-        message.textContent = "Movie Added Back!"
+        message.textContent = `${event.target.textContent} Added Back!`;
     }
     revealMessage();
 }
