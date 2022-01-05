@@ -18,11 +18,13 @@ function addMovie(event){
     newUl.appendChild(movie);
     inputField.value = '';
     message.textContent = 'Movie Added!'
+    revealMessage();
 }
 
 function deleteMovie(event){
     event.target.parentNode.remove();
     message.textContent = 'Movie Deleted!';
+    revealMessage();
 }
 
 function crossOffMovie(event){
@@ -31,8 +33,18 @@ function crossOffMovie(event){
     if(event.target.classList.contains("checked")){
         message.textContent = "Movie Watched!"
     }else{
-        message.textContent = "Movie AddedBack!"
+        message.textContent = "Movie Added Back!"
     }
+    revealMessage();
+}
+
+function revealMessage(){
+    message.classList.remove("hide");
+    setTimeout(disappear, 1000)
+}
+
+function disappear(){
+    message.classList.toggle("hide");
 }
 
 let newForm = document.querySelector("form");
